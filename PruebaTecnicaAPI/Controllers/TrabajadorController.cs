@@ -21,7 +21,6 @@ namespace PruebaTecnicaAPI.Controllers
         [HttpGet("{id}")]
         public Trabajador Get([FromRoute] int id)
         {
-            Console.WriteLine(id);
             return TrabajadorData.Obtener(id);
         }
 

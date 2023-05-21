@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace PruebaTecnicaAPI.Models
 {
     public class Trabajador
     {
+        [Key]
         public int IdUsuario { get; set; }
         public string DocumentoIdentidad { get; set; }
         public string Nombres { get; set; }

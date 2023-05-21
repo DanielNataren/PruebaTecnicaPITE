@@ -1,0 +1,36 @@
+<div class="container-sm">
+  <h1>Lista de empleados</h1>
+  <button mat-button (click)="openDialog()" class="btn btn-dark">Nuevo empleado</button>
+  <div class="list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Documento identidad</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Fecha de registro</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of trabajadores">
+          <th scope="row">{{t.idUsuario}}</th>
+          <td>{{t.documentoIdentidad}}</td>
+          <td>{{t.nombres}}</td>
+          <td>{{t.telefono}}</td>
+          <td>{{t.correo}}</td>
+          <td>{{t.ciudad}}</td>
+          <td>{{t.fechaRegistro}}</td>
+          <td>
+            <button (click)="dialogEditEmpleado(t)" type="button" class="btn btn-primary"><i class="fa-solid fa-pen"></i></button>
+            <button (click)="handledDelete(t.idUsuario!)" type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
