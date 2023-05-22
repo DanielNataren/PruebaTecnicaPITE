@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using PruebaTecnicaAPIEF.EntityConfig;
 using PruebaTecnicaAPIEF.Models;
 
 namespace PruebaTecnicaAPIEF.Contexto
@@ -18,6 +19,7 @@ namespace PruebaTecnicaAPIEF.Contexto
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            TrabajadorEntityConfig.SetTrabajadorEntityConfig(modelBuilder.Entity<Trabajador>());
             modelBuilder.Entity<Trabajador>().HasKey(t => t.IdUsuario);
 
         }
